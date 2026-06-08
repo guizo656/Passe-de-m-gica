@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrinho 2026</title>
+
+    <!-- Favicon e cores -->
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS externo -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- CSS interno para blur -->
+    <style>
+        .blur-overlay {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+
+            /* Máscara para efeito de fade */
+            mask-image: linear-gradient(to top, black 0%, black 35%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to top, black 0%, black 35%, transparent 100%);
+
+            opacity: 1;
+            transition: opacity 0.2s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Menu suspenso -->
+    <nav class="navbar">
+        <div class="logo">Agrinho 2026</div>
+
+        <ul class="menu">
+            <li><a href="#inicio">Início</a></li>
+
+            <li class="dropdown">
+                <a href="#">Conteúdo ▾</a>
+
+                <ul class="submenu">
+                    <li><a href="#projeto">Projeto</a></li>
+                    <li><a href="#sustentabilidade">Sustentabilidade</a></li>
+                    <li><a href="#meioambiente">Meio Ambiente</a></li>
+                </ul>
+            </li>
+
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+
+        <button class="menu-mobile">☰</button>
+    </nav>
+
+    <!-- Header principal -->
+    <header id="inicio">
+        <h1 class="japa">
+            Projeto Agrinho 2026: <br>
+            É certo dizer que a agricultura é <br>
+            a inimiga da sustentabilidade?
+        </h1>
+    </header>
+
+    <!-- Música de fundo
+     
+    adicionar atletic theme yoshi island ( https://youtu.be/clcUZ7d_8ek?si=f1DkCRQzOFgtteSr ) após
+    chegar ao final da apresentação para dar um ar de " Conclusão"-->
+    <audio id="bgmusic" autoplay loop muted>
+        <source src="persona 3 soundtrack.mp3" type="audio/mp3">
+    </audio>
+    </header>
+
+    <!-- Overlay de blur -->
+    <div class="blur-overlay"></div>
+
+    <!-- Scripts -->
+    <script>
+        // Ativar música ao clicar
+        window.addEventListener("click", () => {
+            const music = document.getElementById("bgmusic");
+            music.muted = false;
+            music.play();
+        });
+
+        // Controle da opacidade do blur conforme scroll
+        const blur = document.querySelector('.blur-overlay');
+        window.addEventListener('scroll', () => {
+            const scroll = window.scrollY;
+            const max = 500;
+            const opacity = 1 - (scroll / max);
+            blur.style.opacity = Math.max(opacity, 0);
+
+            // Menu
+
+            const botaoMenu = document.querySelector(".menu-mobile");
+            const menu = document.querySelector(".menu");
+
+            botaoMenu.addEventListener("click", () => {
+                menu.classList.toggle("active");
+            });
+        });
+
+  function toggleTexto(id, botao) {
+    const texto = document.getElementById(id);
+
+    if (texto.style.display === "none") {
+        texto.style.display = "block";
+        botao.textContent = "▼";
+    } else {
+        texto.style.display = "none";
+        botao.textContent = "►";
+    }
+}
+    </script>
+
+    <!--fazer abobrinha tipo wikepedia pra mostrar a ref
+    
+    ref: https://www.ecocert.com/pt-BR/artigo/5091670
+    https://www.youtube.com/watch?v=uhKm3vcQcik
+    https://www.instagram.com/p/DN0ppBM4s4T/?utm_source=ig_web_button_share_sheet
+    https://sul21.com.br/noticias/geral/2018/03/agricultura-sustentavel-nao-e-coisa-de-socialista-e-o-mainstream-defende-professor-da-ufrgs/
+    https://pt.wikipedia.org/wiki/Agricultura_sustent%C3%A1vel-->
+
+    <!-- Seções para menu-->
+
+    <!-- Ideia e demonstração do foco inicial do projeto-->
+
+
+
+    <main>
+
+    <section id="projeto" class="secao">
+
+            <div id="projeto-titulo">   
+   
+        <h2>Agricultura é inimiga da sustentabilidade? <br>
+            O futuro sustentavél que precisamos
+        </h2>
+
+        <button
+    class="arrow-btn"
+    onclick="toggleTexto('projeto-texto', this)">
+    ▼
+</button>
+
+</div>    
+
+         <div id=projeto-texto> 
+        <p> É comum estabelecer ambos os conceitos como extremos opostos devido a ideia de que um interrompa os processos do outro <br>
+             Entretanto, podemos ver que a comunidade agro vem buscando formas de combater oque conhecemos como " Agricultura Con- <br>
+            vencional ", modo que se tornou popular em 1.970 e vem sendo usado até hoje: Sendo o método que é culpado pela degrada- <br>
+            ção dos solos de todos os países, pesquisas apontam que até 2.050 pelo menos 90% de todo o solo brasileiro será usado <br>
+            E se tornará inviável a utilização desse solo degradado, devido a seu consumo excessivo de água, o abuso dos nutrientes<br>
+            do solo, o consumo de energia. Fora os problemas causados a população, já que a agricultura convencional valo- <br>
+            riza o uso de agrotóxicos e venenos para salvamento das grandes produções feitas em busca da acumulação de dinheiro <br>
+
+              <a href="https://www.ecocert.com/pt-BR/artigo/5091670" >
+            <img src="img/solo.jpeg"> </a>
+            </div>
+
+        </p>
+    </section>
+
+    <!-- Argumentação e defesa da tese, adicoonar imagens-->
+
+
+    <section id="sustentabilidade" class="secao">
+
+         <div id="sustentabilidade-titulo"> 
+
+    
+        <h2>Sustentabilidade</h2>
+        <button
+    class="arrow-btn"
+    onclick="toggleTexto('sustentabilidade-texto', this)">
+    ▼
+</button>
+
+         </div>
+         
+         <div id="sustentabilidade-texto">
+        <p>Sérgio Schneider comenta em palestra que a demanda pela produção não é resultado, mas sim o maior problema enfrentado <br>
+            afinal, a demanda faz com que o agricultor tenha a necessidade de produzir mais do que o solo atualmente aguenta, oque <br>
+            é fruto do nosso método capitalista, que valoriza que a classe dominante continue buscando lucros através de seus meios <br>
+            não podemos endemoniar os grandes produtores rurais, a grande maioria das pessoas sempre está em busca do enriquecimento <br>
+            e da busca pelo melhor modo de vida, entretanto, isso não justifica a falta de tratamento adequado com o solo e a ignorância <br>
+            com quanto a este problema que pode escalonar de forma mais rápida do que parece, ao ponto de que o argumento de muitos <br>
+            de: " Isto afetará as futuras gerações, não será meu problema " ser inutilizada vendo que a mairoia das pesquisas apontam <br>
+            que os problemas estarão a tona em torno de 3 décadas, para efeito de comparação, a década de bronze, os " Anos 90 " <br>
+            foram a também 30 anos. <br>
+            
+        <a href="https://sul21.com.br/noticias/geral/2018/03/agricultura-sustentavel-nao-e-coisa-de-socialista-e-o-mainstream-defende-professor-da-ufrgs/" >
+            <img src="img/sus.png"> </a>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            O método já se mostra arcaico quando observamos que o consumidor hoje em dia está pré-disposto a sustentabilidade, afinal <br>
+             este paga mais pelo produto natural, sem agrotóxicos e com menos riscos a sua saúde e de seus companheiros. <br>
+             <br>
+            Em busca de combater a agricultura convencional, temos a agricultura orgânica, da qual já vem com o pé direito no Brasil; <br>
+             A legislação brasileira introduz o produto orgânico como: <br>
+             "(....) aquele que é obtido em um sistema orgânico de produção agropecuária ou oriundo de processo extrativista sustentável e não prejudicial ao ecossistema local" <br>
+             <br>
+             Sendo assim, o principal ponto da agricultura orgânica é a falta do uso de agrotóxicos ou fertilizantes sintéticos <br>
+             a ideia é utilizar fertilizantes naturais de materia orgânica, nunca deixar sua terra exposta, a cobrindo com técnicas <br>
+             de folhas secas ou outros métodos, controle de pragas com plantio de hortelã, cravos e outras plantas e oléos que possam vir a repelir <br>
+             insetos, além da rotação de culturas, onde nunca se deve ficar plantando apenas o mesmo solo no terreno. <br>
+              Pesquisar apontam em um aumento de 11% na agricultura orgânica <br>
+            
+
+                    <a href="https://www.ecocert.com/pt-BR/artigo/5091510" >
+            <img src="img/familiar.jpeg"> </a>
+            </div>
+        
+        </p>
+    </section>
+
+    <!-- Conclusão -->
+
+    <section id="meioambiente" class="secao">
+        <div id="meioambiente-titulo">
+        <h2>Meio Ambiente</h2>
+<button
+    class="arrow-btn"
+    onclick="toggleTexto('meioambiente-texto', this)">
+    ▼
+</button>
+
+        </div>
+        <div id="meioambiente-texto">
+        <p>A melhor conclusão que podemos tirar disso, é que existe sim uma forma de construir sustentabilidade mesmo <br>
+            sendo parte da bolha agro, e que o meio-ambiente a cima de tudo, como já sabemos, é algo que pode e deve ser preservado <br>
+            uma beleza inestimável da natureza que logo pode vir a nos deixar, e isto pode não ser um destino fixo se <br>
+            depender de nós que temos noção de que podemos mudar o mundo como conhecemos..</p>
+    </section>
+
+    </div>
+
+    <!-- Contatos de serviço-->
+
+    <section id="contato" class="secao">
+        <h2>Contato</h2>
+        <p>Guilhermyhenriquy26e@gmail.com <br>
+            @guizo656 <br>
+             <br>
+
+        </p>
+    </section>
+
+</main>
+</body>
+
+</html>
